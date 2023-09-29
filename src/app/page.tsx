@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { asset, belezza } from './layout';
 import CheckIcon from '@mui/icons-material/Check';
+import { FramerMotion } from '@/components/FramerMotion';
 
 export default function Home() {
   const loginHandler = () => {
@@ -81,7 +82,7 @@ export default function Home() {
                 <p>OU</p>
               </div>
               <p className="flex items-center justify-center">
-                <a href='#plans'>Acesse nossos planos</a>
+                <a href="#plans">Acesse nossos planos</a>
               </p>
             </div>
             <button
@@ -143,12 +144,11 @@ export default function Home() {
             />
           </div>
         </div>
-        <div
-          className="w-[700px] h-[600px] absolute bg-gradient-to-t from-yellow-400 to-50%
-            rounded-[10px] right-[0px]
-          bottom-[0px]"
+        <FramerMotion
+          className="w-[700px] h-[600px] relative bg-gradient-to-t from-yellow-400 to-50%
+          rounded-[10px] right-[0px] bottom-[0px]"
         >
-          <div className="w-full h-full relative">
+          <div className="w-full h-full absolute motion-object">
             <Image
               src="/images/barber2.png"
               alt="Barber 2"
@@ -158,28 +158,31 @@ export default function Home() {
             />
           </div>
           <div className="absolute w-full h-[50%] bottom-[0px] border-l-[#1a1a1a] border-l-[2px]" />
-        </div>
+        </FramerMotion>
       </div>
-      <div className="w-full h-[100vh] relative flex flex-col justify-center items-center" id='plans'>
+      <div
+        className="w-full h-[100vh] relative flex flex-col justify-center items-center"
+        id="plans"
+      >
         <div className="flex flex-col justify-center items-center">
           <p className="text-[1.6em]">Planos</p>
           <p>Tenha acesso a até 4 cortes por mês pagando menos!</p>
         </div>
         <div className="p-[10px] flex justify-center items-center gap-x-[10px] w-full h-[75%] text-black">
-          <div className="w-[400px] h-[350px] bg-slate-100 rounded-[10px] flex flex-col items-center">
+          <div className="w-[350px] min-h-[400px] py-[20px] bg-slate-100 rounded-[10px] flex flex-col items-center justify-around">
             <div className="flex items-center w-[70%] border-b-[1px] border-b-black/30 justify-center">
               <p className="flex items-center justify-center p-[10px] text-semibold text-[1.3em]">
                 PLATINUM
               </p>
             </div>
             <div className="pt-[25px]">
-              <p className="font-semibold text-[2.2em] text-black">
+              <p className="font-semibold text-[2.4em] text-black">
                 <sup className="text-[0.5rem] align-super">R$</sup>
                 350
                 <sub className="text-[0.7rem] align-baseline">/mês</sub>
               </p>
             </div>
-            <ul className="flex flex-col w-full pt-[40px] px-[20px] gap-y-[20px]">
+            <ul className="flex flex-col w-full py-[40px] px-[20px] gap-y-[20px]">
               <li className="flex items-center gap-x-[10px]">
                 <CheckIcon className="text-green-300" />
                 Acesso a 12 bebidas por mês.
@@ -193,20 +196,83 @@ export default function Home() {
                 Acesso total aos videogames.
               </li>
             </ul>
+            <button
+              className="bg-yellow-400 py-[15px] px-[40px] rounded-[8px] font-semibold text-[1.4em]
+              text-black"
+              type="button"
+            >
+              Assine
+            </button>
           </div>
-          <div className="w-[500px] h-[450px] bg-yellow-400 rounded-[10px] flex flex-col items-center">
+          <div className="w-[350px] min-h-[500px] py-[20px] bg-yellow-400 rounded-[10px] flex flex-col items-center justify-around">
             <div className="flex items-center justify-center w-[70%] border-b-[1px] border-b-black/30">
               <p className="flex items-center justify-center p-[10px] text-semibold text-[1.3em] text-black">
                 BASIC
               </p>
             </div>
+            <div className="pt-[25px]">
+              <p className="font-semibold text-[2.4em] text-black">
+                <sup className="text-[0.5rem] align-super">R$</sup>
+                150
+                <sub className="text-[0.7rem] align-baseline">/mês</sub>
+              </p>
+            </div>
+            <ul className="flex flex-col w-full py-[40px] px-[20px] gap-y-[20px]">
+              <li className="flex items-center gap-x-[10px]">
+                <CheckIcon className="text-green-300" />
+                Acesso a 6 bebidas por mês.
+              </li>
+              <li className="flex items-center gap-x-[10px]">
+                <CheckIcon className="text-green-300" />
+                Acesso a 6 bebidas por mês.
+              </li>
+              <li className="flex items-center gap-x-[10px]">
+                <CheckIcon className="text-green-300" />
+                Acesso a 6 bebidas por mês.
+              </li>
+            </ul>
+            <button
+              className="bg-white py-[15px] px-[40px] rounded-[8px] font-semibold text-[1.4em]
+              text-black"
+              type="button"
+            >
+              Assine
+            </button>
           </div>
-          <div className="w-[400px] h-[350px] bg-slate-100 rounded-[10px] flex flex-col items-center">
+          <div className="w-[350px] min-h-[400px] py-[20px] bg-slate-100 rounded-[10px] flex flex-col items-center justify-around">
             <div className="flex items-center justify-center w-[70%] border-b-[1px] border-b-black/30">
               <p className="flex items-center justify-center p-[10px] text-semibold text-[1.3em] text-black">
                 PRO
               </p>
             </div>
+            <div className="pt-[25px]">
+              <p className="font-semibold text-[2.4em] text-black">
+                <sup className="text-[0.5rem] align-super">R$</sup>
+                250
+                <sub className="text-[0.7rem] align-baseline">/mês</sub>
+              </p>
+            </div>
+            <ul className="flex flex-col w-full py-[40px] px-[20px] gap-y-[20px]">
+              <li className="flex items-center gap-x-[10px]">
+                <CheckIcon className="text-green-300" />
+                Acesso a 10 bebidas por mês.
+              </li>
+              <li className="flex items-center gap-x-[10px]">
+                <CheckIcon className="text-green-300" />
+                Acesso total aos videogames.
+              </li>
+              <li className="flex items-center gap-x-[10px]">
+                <CheckIcon className="text-green-300" />
+                Acesso total aos videogames.
+              </li>
+            </ul>
+            <button
+              className="bg-yellow-400 py-[15px] px-[40px] rounded-[8px] font-semibold text-[1.4em]
+              text-black"
+              type="button"
+            >
+              Assine
+            </button>
           </div>
         </div>
       </div>
