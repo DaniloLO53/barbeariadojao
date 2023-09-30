@@ -95,7 +95,7 @@ export function FramerMotion({
       // initial={'hidden'}
       // animate={control}
       // variants={frameVariant}
-      className={`box ${className}`}
+      className={`${className}`}
       style={{ right: `${xPosition}px` }}
     >
       {children}

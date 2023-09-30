@@ -94,7 +94,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="w-full relative flex flex-row justify-start items-start gap-x-[10px]">
+      <div className="w-full relative flex flex-row justify-start items-start gap-x-[10px] overflow-x-hidden">
         <div className="w-[35%] h-[600px] relative bg-green-100">
           <Image
             src="/images/barber1.jpg"
@@ -145,7 +145,7 @@ export default function Home() {
           </div>
         </div>
         <FramerMotion
-          className="w-[700px] h-[600px] relative bg-gradient-to-t from-yellow-400 to-50%
+          className="w-[700px] h-[600px] absolute bg-gradient-to-t from-yellow-400 to-50%
           rounded-[10px] right-[0px] bottom-[0px]"
         >
           <div className="w-full h-full absolute motion-object">
@@ -157,7 +157,7 @@ export default function Home() {
               className=""
             />
           </div>
-          <div className="absolute w-full h-[50%] bottom-[0px] border-l-[#1a1a1a] border-l-[2px]" />
+          {/* <div className="absolute w-full h-[50%] bottom-[0px]" /> */}
         </FramerMotion>
       </div>
       <div
