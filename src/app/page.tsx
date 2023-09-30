@@ -8,6 +8,29 @@ export default function Home() {
     console.log('login');
   };
 
+  const priceTable = [
+    {
+      type: 'CORTE',
+      price: 55,
+    },
+    {
+      type: 'CORTE COM TESOURA',
+      price: 65,
+    },
+    {
+      type: 'CORTE COM DESENHO',
+      price: 75,
+    },
+    {
+      type: 'BARBA',
+      price: 35,
+    },
+    {
+      type: 'SOBRANCELHA',
+      price: 25,
+    },
+  ];
+
   return (
     <main>
       <div className=" h-[calc(100vh)] bottom-[0px] flex flex-col bg-cover bg-center bg-[url('/images/barbeariadojao_main.jpg')]">
@@ -24,59 +47,17 @@ export default function Home() {
             <div className="bg-black/50 w-[450px] items-center justify-center px-[30px] py-[15px] rounded-[10px]">
               <p>Tabela de valores</p>
               <div className="border-y-[1px] border-y-slate-600 py-[10px] my-[10px]">
-                <div className={`flex items-center justify-between`}>
-                  <p>CORTE</p>
-                  <p className="text-yellow-300 font-semibold text-[1.4em]">
-                    <sup className="text-white text-[0.5rem] align-super">
-                      R$
-                    </sup>
-                    55
-                  </p>
-                </div>
-                <div
-                  className={`flex items-center justify-between gap-x-[12px]`}
-                >
-                  <p>CORTE COM TESOURA</p>
-                  <p className="text-yellow-300 font-semibold text-[1.4em]">
-                    <sup className="text-white text-[0.5rem] align-super">
-                      R$
-                    </sup>
-                    65
-                  </p>
-                </div>
-                <div
-                  className={`flex items-center justify-between gap-x-[12px]`}
-                >
-                  <p>CORTE COM DESENHO</p>
-                  <p className="text-yellow-300 font-semibold text-[1.4em]">
-                    <sup className="text-white text-[0.5rem] align-super">
-                      R$
-                    </sup>
-                    75
-                  </p>
-                </div>
-                <div
-                  className={`flex items-center justify-between gap-x-[12px]`}
-                >
-                  <p>BARBA</p>
-                  <p className="text-yellow-300 font-semibold text-[1.4em]">
-                    <sup className="text-white text-[0.5rem] align-super">
-                      R$
-                    </sup>
-                    35
-                  </p>
-                </div>
-                <div
-                  className={`flex items-center justify-between gap-x-[12px]`}
-                >
-                  <p>SOBRANCELHA</p>
-                  <p className="text-yellow-300 font-semibold text-[1.4em]">
-                    <sup className="text-white text-[0.5rem] align-super">
-                      R$
-                    </sup>
-                    25
-                  </p>
-                </div>
+                {priceTable.map(({ price, type }, index) => (
+                  <div className={`flex items-center justify-between`} key={index}>
+                    <p>{ type }</p>
+                    <p className="text-yellow-300 font-semibold text-[1.4em]">
+                      <sup className="text-white text-[0.5rem] align-super">
+                        R$
+                      </sup>
+                      { price }
+                    </p>
+                  </div>
+                ))}
               </div>
               <div className="flex items-center justify-center font-extralight">
                 <p>OU</p>
@@ -157,7 +138,6 @@ export default function Home() {
               className=""
             />
           </div>
-          {/* <div className="absolute w-full h-[50%] bottom-[0px]" /> */}
         </FramerMotion>
       </div>
       <div
